@@ -1,170 +1,193 @@
-
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رمادي ديزاين - تصميم فخم</title>
+<html lang="ar" dir="rtl">
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>رمادي ديزاين - تصميم أنيق</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&amp;display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
   <style>
     body {
       margin: 0;
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to bottom right, #1f1f1f, #3c3c3c);
-      color: white;
-      text-align: center;
+      background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+      color: #eee;
+      transition: background 0.5s, color 0.5s;
     }
+
+    body.light {
+      background: linear-gradient(135deg, #f4f4f4, #e4e4e4);
+      color: #222;
+    }
+
     .header {
-      padding: 60px 20px;
-      background: url('https://images.unsplash.com/photo-1607082350899-3413f9a4e5c9?auto=format&fit=crop&w=1470&q=80') center/cover;
-      background-blend-mode: overlay;
-      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 60px 20px 20px;
     }
+
     .header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      color: #ffd700;
+      font-size: 3rem;
+      color: #66ccff;
     }
+
     .header p {
-      font-size: 20px;
-      color: #ccc;
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
     }
-    .section {
-      padding: 40px 20px;
-    }
-    .section h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #00c3ff;
-    }
-    .features {
+
+    .contact {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      margin-top: 20px;
     }
-    .feature-box {
-      background-color: #292929;
-      padding: 30px;
+
+    .contact a {
+      font-size: 2.5rem;
+      color: #66ccff;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .contact a:hover {
+      transform: scale(1.2);
+      color: #ffffff;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #444;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #66ccff;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #292929;
       border-radius: 20px;
-      width: 250px;
-      box-shadow: 0 0 10px #000;
+      padding: 25px;
+      width: 280px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    body.light .card {
+      background: #fff;
+    }
+
+    .card i {
+      font-size: 3rem;
+      color: #66ccff;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    #colorPickerContainer {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+    }
+
+    #colorPickerContainer label {
+      font-size: 2rem;
+      color: #66ccff;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
-    .feature-box:hover {
-      transform: scale(1.05);
-    }
-    .feature-box i {
-      font-size: 40px;
-      margin-bottom: 15px;
-      color: #ffd700;
-    }
-    .contact {
-      margin-top: 30px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      border-radius: 30px;
-      background: #00c3ff;
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .contact a:hover {
-      background: #009ac9;
-    }
-    .footer {
-      padding: 20px;
-      font-size: 14px;
-      color: #aaa;
-      background-color: #111;
-    }
-  </style>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
 
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle('light-theme');
-  }
-</script>
-<style>
-  .theme-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 999;
-    background-color: #ffd700;
-    color: black;
-    padding: 10px 15px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .color-heart {
-    position: fixed;
-    top: 80px;
-    left: 20px;
-    font-size: 32px;
-    cursor: pointer;
-    z-index: 999;
-    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  body.light-theme {
-    background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
-    color: #000;
-  }
-  body.light-theme .feature-box {
-    background-color: #fff;
-    color: #000;
-  }
-  body.light-theme .footer {
-    background-color: #e0e0e0;
-    color: #444;
-  }
-</style>
-<div class="theme-toggle" onclick="toggleTheme()">تبديل الوضع</div>
-<div class="color-heart"><i class="fas fa-heart"></i></div>
+    #colorPickerContainer label:hover {
+      transform: scale(1.2);
+      color: #fff;
+    }
 
-  <div class="header">
-    <h1>رمادي ديزاين</h1>
-    <p>تصميمات فخمة واحترافية</p>
-  </div>
-
-  <div class="section">
-    <h2>شروط التصميمات الفخمة</h2>
-    <div class="features">
-      <div class="feature-box">
-        <i class="fas fa-palette"></i>
-        <h3>ستايلات فخمة</h3>
-        <p>ألوان راقية وتناسق عالي</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-image"></i>
-        <h3>بنرات احترافية</h3>
-        <p>جاذبية بصريّة مبهرة</p>
-      </div>
-      <div class="feature-box">
-        <i class="fas fa-icons"></i>
-        <h3>أيقونات فاخرة</h3>
-        <p>تصميم عصري وأنيق</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section contact">
-    <h2>تواصل معنا</h2>
-    <a href="https://wa.me/967778436340" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
-    <a href="https://www.snapchat.com/add/noorromas" target="_blank"><i class="fab fa-snapchat"></i> سناب شات</a>
-    <a href="mailto:noorromas445@gmail.com"><i class="fas fa-envelope"></i> تواصل معنا عبر البريد الإلكتروني</a>
-  </div>
-
-  <div class="footer">
-    جميع الحقوق محفوظة © رمادي ديزاين 2025
-  </div>
-</body>
+    #colorPicker {
+      display: none;
+    }
+  </style> 
+ </head> 
+ <body> 
+  <button class="toggle-btn" onclick="document.body.classList.toggle('light')">تبديل الوضع</button> 
+  <div class="header"> 
+   <h1>رمادي ديزاين</h1> 
+   <p>تصميمات فخمة، ستايلات احترافية، بنرات وأيقونات</p> 
+  </div> 
+  <div class="contact"> 
+   <a href="https://wa.me/967778436340" target="_blank"><i class="fab fa-whatsapp"></i></a> 
+   <a href="https://www.snapchat.com/add/noorromas" target="_blank"><i class="fab fa-snapchat"></i></a> 
+   <a href="mailto:noorromas445@gmail.com"><i class="fas fa-envelope"></i></a> 
+  </div> 
+  <div class="section"> 
+   <h2>شروط التصميمات الفخمة</h2> 
+   <div class="cards"> 
+    <div class="card"> 
+     <i class="fas fa-palette"></i> 
+     <h3>ستايلات راقية</h3> 
+     <p>اختيارات ألوان دقيقة تعكس هوية فخمة وأنيقة</p> 
+    </div> 
+    <div class="card"> 
+     <i class="fas fa-image"></i> 
+     <h3>بنرات جذابة</h3> 
+     <p>تصميم بصري يلفت الانتباه ويعزز الرسالة الإبداعية</p> 
+    </div> 
+    <div class="card"> 
+     <i class="fas fa-icons"></i> 
+     <h3>أيقونات احترافية</h3> 
+     <p>تناسق بصري باستخدام أحدث الرموز والستايلات</p> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="colorPickerContainer"> 
+   <label for="colorPicker" title="اختر لونك"> <i class="fas fa-heart"></i> </label> 
+   <input type="color" id="colorPicker" value="#66ccff"> 
+  </div> 
+  <footer>
+    جميع الحقوق محفوظة © رمادي ديزاين 2025 
+  </footer> 
+  <script>
+    const colorInput = document.getElementById("colorPicker");
+    colorInput.addEventListener("input", function () {
+      document.body.style.background = `linear-gradient(135deg, ${this.value}, #1a1a1a)`;
+    });
+  </script> 
+ </body>
 </html>
